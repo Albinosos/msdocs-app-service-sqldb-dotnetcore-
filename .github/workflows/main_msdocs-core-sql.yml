@@ -27,7 +27,7 @@ jobs:
         run: dotnet build msdocs-app-service-sqldb-dotnetcore-main/msdocs-app-service-sqldb-dotnetcore-main/DotNetCoreSqlDb.csproj --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o "${{env.DOTNET_ROOT}}/myapp"
+        run: dotnet publish msdocs-app-service-sqldb-dotnetcore-main/msdocs-app-service-sqldb-dotnetcore-main/DotNetCoreSqlDb.csproj -c Release -o "${{env.DOTNET_ROOT}}/myapp"
 
       - name: dotnet bundle migration
         run: dotnet ef migration bundle --runtime linux-x64 –p msdocs-app-service-sqldb-dotnetcore-main/msdocs-app-service-sqldb-dotnetcore-main/DotNetCoreSqlDb.csproj -o ${{env.DOTNET_ROOT}}/myapp/migrate
