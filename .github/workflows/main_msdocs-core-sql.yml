@@ -29,12 +29,13 @@ jobs:
       - name: dotnet publish
         run: dotnet publish msdocs-app-service-sqldb-dotnetcore-main/msdocs-app-service-sqldb-dotnetcore-main/DotNetCoreSqlDb.csproj -c Release -o "${{env.DOTNET_ROOT}}/myapp"
 
-      - name: dotnet bundle migration
-        run: dotnet ef migration bundle --runtime linux-x64 -p msdocs-app-service-sqldb-dotnetcore-main/msdocs-app-service-sqldb-dotnetcore-main/DotNetCoreSqlDb.csproj -o ${{env.DOTNET_ROOT}}/myapp/migrate
-
-    
+   
       - name: dotnet install ef
         run: dotnet tool install -g dotnet-ef --version 7.0.14
+
+
+      - name: dotnet bundle migration
+        run: dotnet ef migration bundle --runtime linux-x64 -p msdocs-app-service-sqldb-dotnetcore-main/msdocs-app-service-sqldb-dotnetcore-main/DotNetCoreSqlDb.csproj -o ${{env.DOTNET_ROOT}}/myapp/migrate
 
         
       - name: Upload artifact for deployment job
