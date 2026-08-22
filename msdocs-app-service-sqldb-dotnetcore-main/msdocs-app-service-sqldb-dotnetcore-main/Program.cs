@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
         options.UseSqlServer(builder.Configuration.GetConnectionString("AZURE_SQL_CONNECTIONSTRING")));
 
 
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
