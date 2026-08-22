@@ -35,7 +35,7 @@ jobs:
 
 
       - name: dotnet bundle migration
-        run: dotnet ef migrations bundle --runtime win-x64 -p msdocs-app-service-sqldb-dotnetcore-main/msdocs-app-service-sqldb-dotnetcore-main/DotNetCoreSqlDb.csproj -o "${{env.DOTNET_ROOT}}/myapp/migrate"
+        run: dotnet ef migrations bundle --runtime win-x64 -p msdocs-app-service-sqldb-dotnetcore-main/msdocs-app-service-sqldb-dotnetcore-main/DotNetCoreSqlDb.csproj -o "${{env.DOTNET_ROOT}}/myapp/migrate.exe"
 
         
       - name: Upload artifact for deployment job
